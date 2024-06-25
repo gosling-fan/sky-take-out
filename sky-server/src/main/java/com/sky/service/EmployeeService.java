@@ -2,7 +2,9 @@ package com.sky.service;
 
 import com.sky.dto.EmployeeDTO;
 import com.sky.dto.EmployeeLoginDTO;
+import com.sky.dto.EmployeePageQueryDTO;
 import com.sky.entity.Employee;
+import com.sky.result.PageResult;
 
 public interface EmployeeService {
 
@@ -20,4 +22,23 @@ public interface EmployeeService {
     void add(EmployeeDTO employeeDTO);
 
     Employee selectEmployeeByusername(String username);
+
+    PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /**
+     * 启用、禁用员工账号
+     * @param status
+     * @param id
+     */
+    void enableOrDisable(Integer status, Long id);
+    /**
+     * 根据id查询员工信息
+     * @return
+     */
+    Employee getEmployeeById(Long id);
+    /**
+     * 编辑员工信息
+     * @param employeeDTO
+     */
+    void updateEmployee(EmployeeDTO employeeDTO);
 }
