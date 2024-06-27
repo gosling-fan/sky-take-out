@@ -8,4 +8,10 @@
                     (#{fl.dishId},#{fl.name},#{fl.value})
                 </foreach>
     </insert>
+    <delete id="deleteBatch" parameterType="Integer" >
+        delete from dish_flavor where dish_id in
+        <foreach collection="dishIds" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
 </mapper>
