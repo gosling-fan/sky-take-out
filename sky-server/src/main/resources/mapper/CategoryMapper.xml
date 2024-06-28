@@ -28,4 +28,10 @@
             </set>
         where id = #{id}
     </update>
+    <select id="queryByType" parameterType="Integer" resultType="com.sky.entity.Category">
+        select * from category
+        <where>
+            <if test="type!=null">type = #{type}</if>
+        </where>
+    </select>
 </mapper>

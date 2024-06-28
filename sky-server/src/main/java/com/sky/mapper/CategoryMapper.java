@@ -26,7 +26,7 @@ public interface CategoryMapper {
             "values(#{type},#{name},#{sort},#{status},#{createTime},#{updateTime},#{createUser},#{updateUser})")
     @AutoFill(value = OperationType.INSERT)
     void add(Category category);
-    @Select("select * from category where type=#{type}")
+
     List<Category> queryByType(Integer type);
     @Delete("delete from category where id = #{id}")
     void delete(Long id);
