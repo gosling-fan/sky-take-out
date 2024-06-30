@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Update;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface OrderMapper {
@@ -33,4 +34,8 @@ public interface OrderMapper {
     List<Orders> queryByStatusTime(Integer status, LocalDateTime dateTime);
 
     void updatePayStatus(Orders orders);
+
+    Integer countByMap(Map map);
+
+    Double sumByMap(Map map);
 }
