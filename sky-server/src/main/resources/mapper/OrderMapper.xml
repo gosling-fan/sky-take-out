@@ -11,4 +11,23 @@
                 #{payStatus}, #{amount}, #{remark}, #{phone}, #{address}, #{consignee},
                 #{estimatedDeliveryTime}, #{deliveryStatus}, #{packAmount}, #{tablewareNumber}, #{tablewareStatus})
     </insert>
+    <update id="updatePayStatus" parameterType="Orders">
+        update orders
+        <set>
+            <if test="status!=null"> status =#{status},</if>
+            <if test="userId!=null"> user_id =#{userId},</if>
+            <if test="addressBookId!=null"> address_book_id =#{addressBookId},</if>
+            <if test="orderTime!=null"> order_time =#{orderTime},</if>
+            <if test="checkoutTime!=null"> checkout_time =#{checkoutTime},</if>
+            <if test="payMethod!=null"> pay_method =#{payMethod},</if>
+            <if test="payStatus!=null"> pay_status =#{payStatus},</if>
+            <if test="amount!=null"> amount =#{amount},</if>
+            <if test="phone!=null"> phone =#{phone},</if>
+            <if test="estimatedDeliveryTime!=null"> estimated_delivery_time =#{estimatedDeliveryTime},</if>
+            <if test="cancelReason!=null"> cancel_reason =#{cancelReason},</if>
+            <if test="address!=null"> address =#{address},</if>
+            <if test="cancelTime!=null"> cancel_time =#{cancelTime},</if>
+        </set>
+            where number = #{number}
+    </update>
 </mapper>
