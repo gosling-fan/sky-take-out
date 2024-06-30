@@ -47,11 +47,11 @@ sky:
     user-ttl: 72000000
     user-token-name: authentication
   #    阿里云oss
-  alioss:
-    endpoint: oss-cn-beijing.aliyuncs.com
-    access-key-id: LTAI5tJ9VLjEuJL9MNkWfoXC
-    access-key-secret: MHGfKNjK64jDOER9Atmw0onTJ84WcL
-    bucket-name: sky-take-out-jndx
   wechat:
     appid: ${sky.wechat.appid}
     secret: ${sky.wechat.secret}
+  alioss:
+    endpoint:
+    access-key-secret:
+    access-key-id:
+    bucket-name:
